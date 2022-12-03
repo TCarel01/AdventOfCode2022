@@ -28,21 +28,12 @@ function part1(input) {
 }
 
 function part2(input) {
-    input.pop;
-    let elfGroupsList = [];
-    let curElves = [];
-    for (let i = 0; i < input.length; ++i) {
-        if (i % 3 === 0 && i !== 0) {
-            elfGroupsList.push(curElves);
-            curElves = [];
-        }
-        curElves.push(input[i]);
-    }
+    input.pop();
     let totalSum = 0;
-    for (let i = 0; i < elfGroupsList.length; ++i) {
-        firstElf = elfGroupsList[i][0].split('');
-        secondElf = elfGroupsList[i][1].split('');
-        thirdElf = elfGroupsList[i][2].split('');
+    for (let i = 0; i < input.length / 3; ++i) {
+        firstElf = input[i * 3].split('');
+        secondElf = input[i * 3 + 1].split('');
+        thirdElf = input[i * 3 + 2].split('');
         let priority = firstElf.reduce((acc, e) => secondElf.findIndex((val) => val === e) !== -1
                                                                 && thirdElf.findIndex((val) => val === e) !== -1 &&
                                                                 acc === 0 ? e : acc, 0);
