@@ -23,7 +23,6 @@ function part1(input) {
         let secondHalfArr = input[i][1].split('');
         totalValue += firstHalfArr.reduce((acc, e) => secondHalfArr.findIndex((val) => val === e) !== -1 && acc === 0 ? 
                                                         findPriority(e) : acc, 0);
-        let x = 2;
     }
     return totalValue;
 }
@@ -39,7 +38,6 @@ function part2(input) {
         }
         curElves.push(input[i]);
     }
-    let x = 2;
     let totalSum = 0;
     for (let i = 0; i < elfGroupsList.length; ++i) {
         firstElf = elfGroupsList[i][0].split('');
