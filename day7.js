@@ -9,6 +9,7 @@ function parser(){
 function sum(arr) {
     return arr.reduce ((acc, e) => acc + e, 0);
 }
+
 function parseFileSystem(fileSystem) {
     let fileSizes = 0;
     let dirSizes = 0;
